@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes user's go env if it exists
+if [ -d "$(go env GOPATH)/bin" ]; then
+    PATH="$(go env GOPATH)/bin:$PATH"
+fi
